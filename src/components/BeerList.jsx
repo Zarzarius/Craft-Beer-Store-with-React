@@ -15,7 +15,6 @@ const BeerList = () => {
         const results = await response.json();
         setBeers(results);
         setLoading(false);
-        console.log("useFetch", beers[0]);
       } catch (error) {
         console.error(error.message);
       }

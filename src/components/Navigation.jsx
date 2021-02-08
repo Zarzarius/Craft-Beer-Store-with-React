@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BeerLogo from "../assets/ZARZARIUS.svg";
-import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+// import { useAuth } from "../context/AuthContext";
 
-import { Nav, Container, Button } from "react-bootstrap";
+// import { Nav, Container, Button } from "react-bootstrap";
 
 const Navigation = () => {
   // const [error, setError] = useState("");
