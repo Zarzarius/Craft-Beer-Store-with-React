@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import Navigation from "./Navigation";
 import LogIn from "./LogIn";
-import PrivateRoute from "./PrivateRoute";
+// import PrivateRoute from "./PrivateRoute";
 
 const App = () => {
   return (

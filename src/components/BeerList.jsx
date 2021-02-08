@@ -21,7 +21,7 @@ const BeerList = () => {
       }
     }
     fetchData();
-  }, [URI, beers]);
+  }, [URI]);
 
   if (loading) return <p className='loading'>Loading...</p>;
 
