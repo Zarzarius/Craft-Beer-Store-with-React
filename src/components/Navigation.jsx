@@ -1,57 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BeerLogo from "../assets/ZARZARIUS.svg";
-import { Link } from "react-router-dom";
-// import { useAuth } from "../context/AuthContext";
-
-// import { Nav, Container, Button } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { Nav, Button } from "react-bootstrap";
 
 const Navigation = () => {
-  // const [error, setError] = useState("");
-  // const { logout, currentUser } = useAuth();
-  // const history = useHistory();
+  const [error, setError] = useState("");
+  const { logout, currentUser } = useAuth();
+  const history = useHistory();
 
-  // async function handleLogout() {
-  //   setError("");
+  async function handleLogout() {
+    setError("");
+    try {
+      await logout();
+      history.push("/");
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
-  //   try {
-  //     await logout();
-  //     history.push("/landing");
-  //   } catch {
-  //     setError("Failed to log out");
-  //   }
-  // }
+  let loginButton;
+  currentUser
+    ? (loginButton = (
+        <Button variant='danger' onClick={handleLogout}>
+          Log Out
+        </Button>
+      ))
+    : (loginButton = (
+        <Link className='btn btn-success' to='/login'>
+          Log In
+        </Link>
+      ));
+
+  let user;
+  currentUser
+    ? (user = (
+        <span>
+          <strong>USER:{currentUser.email}</strong>
+        </span>
+      ))
+    : (user = (
+        <span>
+          <strong>NO USER</strong>
+        </span>
+      ));
 
   return (
     <>
-      <nav className='navbar navbar-light Nav'>
+      <Nav className='navbar navbar-light Nav'>
         <div className='container-fluid'>
           <Link to='/'>
             <img className='Header-logo' src={BeerLogo} alt={BeerLogo} />
           </Link>
           <h2 className='navbar-text  fw-bold'>CRAFTBEER DEALER</h2>
-          {/* <button type='button' className='btn btn-outline-light'> */}
+          {/* <button type='button' className='btn btn-outline-light' /> */}
           <div
             style={{
-              maxWidth: "180px",
+              width: "auto",
               minHeight: "auto",
               backgroundColor: "#fff",
             }}>
-            <Link className='btn btn-success' to='/signup'>
-              Sign Up
-            </Link>
-            {/* <Button variant='danger' onClick={handleLogout}>
-              Log Out
-            </Button> */}
-            {/* <span>
-              <strong>USER::{currentUser.email}</strong>{" "}
-            </span> */}
-            {/* {error && <span style={{ color: "red" }}>{error}</span>} */}
+            {loginButton}
+            {user}
+            {error && <span style={{ color: "red" }}>{error}</span>}
           </div>
         </div>
-      </nav>
+      </Nav>
     </>
   );
 };
-
 export default Navigation;

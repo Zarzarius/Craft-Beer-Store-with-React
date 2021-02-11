@@ -24,41 +24,44 @@ const BeerList = () => {
 
   if (loading) return <p className='loading'>Loading...</p>;
 
-  const beerDisplayed = beers.map((beer) => (
-    <Link
-      to={{
-        pathname: `/beerlist/${beer.id}`,
-        state: { beer },
-      }}
-      key={beer.id}>
-      <Card
-        className='beer-card d-flex align-items-center'
-        style={{
-          height: "35rem",
-          width: "18rem",
-          maxWidth: "18rem",
-        }}>
-        <Card.Img
+  const beerDisplayed = beers
+    .filter((beer) => !beer.image_url.includes("keg"))
+    .map((beer) => (
+      <Link
+        to={{
+          pathname: `/beerlist/${beer.id}`,
+          state: { beer },
+        }}
+        key={beer.id}>
+        <Card
+          className='beer-card d-flex align-items-center'
           style={{
-            minHeight: "20rem",
-            width: "5rem",
-            margin: "0 auto",
-            paddingTop: "1rem",
-          }}
-          variant='top'
-          src={beer.image_url}
-        />
-        <Card.Body>
-          <Card.Title>{beer.name}</Card.Title>
-          <Card.Text>{beer.tagline}</Card.Text>
-        </Card.Body>
+            height: "35rem",
+            width: "18rem",
+            maxWidth: "18rem",
+          }}>
+          <Card.Img
+            style={{
+              minHeight: "20rem",
+              width: "5rem",
+              margin: "0 auto",
+              paddingTop: "1rem",
+            }}
+            variant='top'
+            src={beer.image_url}
+          />
+          <Card.Body>
+            <Card.Title>{beer.name}</Card.Title>
+            <Card.Text>{beer.tagline}</Card.Text>
+          </Card.Body>
 
-        <Button style={{ marginBottom: "1rem" }} variant='primary'>
-          Add to Basket
-        </Button>
-      </Card>
-    </Link>
-  ));
+          <Button style={{ marginBottom: "1rem" }} variant='primary'>
+            Add to Basket
+          </Button>
+        </Card>
+      </Link>
+    ));
+
   const pagingHandlerAdd = () => {
     setPaging(paging + 1);
   };

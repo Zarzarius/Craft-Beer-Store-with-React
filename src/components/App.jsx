@@ -12,16 +12,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import Navigation from "./Navigation";
 import LogIn from "./LogIn";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navigation />
         <AuthProvider>
+          <Navigation />
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <PrivateRoute exact path='/' component={Landing} />
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={LogIn} />
             <Route path='/videoinfo' component={VideoInfo} />
@@ -29,8 +29,8 @@ const App = () => {
             <Route path='/beerlist/:id' component={BeerDetail} />
             <Route component={NotFound404} />
           </Switch>
+          <Footer />
         </AuthProvider>
-        <Footer />
       </Router>
     </>
   );
