@@ -5,7 +5,6 @@ const BeerDeatail = (props) => {
   const {
     name,
     tagline,
-    first_brewed,
     description,
     image_url,
     food_pairing,
@@ -17,8 +16,7 @@ const BeerDeatail = (props) => {
   return (
     <section className='beer-box'>
       <div className='beer-detail'>
-        <h2>{name}</h2>
-        <h3>First Brewed: {first_brewed}</h3>
+        <h1>{name}</h1>
         <h3>{tagline} </h3>
         <hr />
         <div className='desctiption-card'>

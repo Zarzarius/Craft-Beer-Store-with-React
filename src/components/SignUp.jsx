@@ -45,18 +45,18 @@ const SignUp = () => {
               <Form onSubmit={handleSubmit}>
                 <Form.Group id='email'>
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type='email' ref={emailRef} requieq />
+                  <Form.Control type='email' ref={emailRef} required />
                 </Form.Group>
                 <Form.Group id='password'>
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type='password' ref={passwordRef} requieq />
+                  <Form.Control type='password' ref={passwordRef} required />
                 </Form.Group>
                 <Form.Group id='password-confirm'>
                   <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control
                     type='password'
                     ref={passwordConfirmRef}
-                    requieq
+                    required
                   />
                 </Form.Group>
                 <Button

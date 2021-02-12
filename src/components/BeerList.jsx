@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button, Container, ButtonGroup } from "react-bootstrap";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const BeerList = () => {
   const [beers, setBeers] = useState([]);
@@ -74,11 +75,13 @@ const BeerList = () => {
       <Container className='container-fluid d-flex align-items-center justify-content-center mb-2'>
         <ButtonGroup aria-label='Basic example'>
           <Button onClick={pagingHandlerRest} variant='success'>
-            Previous page
+            <FaArrowLeft />
+            Prev
           </Button>
 
           <Button onClick={pagingHandlerAdd} variant='success'>
-            Next Page
+            Next
+            <FaArrowRight />
           </Button>
         </ButtonGroup>
       </Container>
@@ -86,11 +89,13 @@ const BeerList = () => {
       <Container className='container-fluid d-flex align-items-center justify-content-center mb-2'>
         <ButtonGroup aria-label='Basic example'>
           <Button onClick={pagingHandlerRest} variant='success'>
-            Previous page
+            <FaArrowLeft />
+            Prev
           </Button>
 
           <Button onClick={pagingHandlerAdd} variant='success'>
-            Next Page
+            Next
+            <FaArrowRight />
           </Button>
         </ButtonGroup>
       </Container>

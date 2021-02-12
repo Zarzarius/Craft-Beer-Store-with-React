@@ -9,8 +9,8 @@ const VideoInfo = (props) => {
         className='d-flex align-items-center justify-content-center bg-transparent'
         style={{ minHeight: "100vh" }}>
         <Iframe
-          width='760'
-          height='415'
+          width='800'
+          height='600'
           src='https://www.youtube.com/embed/B3iBoNKxdwU'
           frameborder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
