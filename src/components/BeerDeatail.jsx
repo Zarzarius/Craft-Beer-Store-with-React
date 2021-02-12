@@ -23,11 +23,11 @@ const BeerDeatail = (props) => {
         <hr />
         <div className='desctiption-card'>
           <img className='beer-pic' src={image_url} alt={image_url} />
-          <p className='description-text'>{description} </p>
+          <span className='description-text'>{description} </span>
         </div>
         <div className='pairing'>
           <h3>Perfect to pair with:</h3>
-          <p>{pairingMatch} </p>
+          <span>{pairingMatch} </span>
         </div>
 
         <Button variant='primary' onClick={() => props.history.goBack()}>
