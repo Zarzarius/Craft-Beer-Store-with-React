@@ -72,7 +72,7 @@ const BeerList = () => {
 
   return (
     <>
-      <Container className='container-fluid d-flex align-items-center justify-content-center mb-2'>
+      <Container className='container-fluid d-flex align-items-center justify-content-center mb-4'>
         <ButtonGroup aria-label='Basic example'>
           <Button onClick={pagingHandlerRest} variant='success'>
             <FaArrowLeft />

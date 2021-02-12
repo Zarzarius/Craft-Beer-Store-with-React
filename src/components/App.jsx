@@ -13,6 +13,8 @@ import { AuthProvider } from "../context/AuthContext";
 import Navigation from "./Navigation";
 import LogIn from "./LogIn";
 import PrivateRoute from "./PrivateRoute";
+import UserStatus from "./UserStatus";
+import Basket from "./Basket";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
       <Router>
         <AuthProvider>
           <Navigation />
+          <UserStatus />
+
           <Switch>
             <PrivateRoute exact path='/' component={Landing} />
             <Route path='/signup' component={SignUp} />
@@ -27,6 +31,7 @@ const App = () => {
             <Route path='/videoinfo' component={VideoInfo} />
             <Route path='/beerlist' exact component={Beerlist} />
             <Route path='/beerlist/:id' component={BeerDetail} />
+            <Basket path='/basket' component={Basket} />
             <Route component={NotFound404} />
           </Switch>
           <Footer />

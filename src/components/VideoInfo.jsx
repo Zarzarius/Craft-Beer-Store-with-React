@@ -5,8 +5,9 @@ import { Container, Button } from "react-bootstrap";
 const VideoInfo = (props) => {
   return (
     <>
+      <h1>Five thing you need to know about Craft Beer</h1>
       <Container
-        className='d-flex align-items-center justify-content-center bg-transparent'
+        className='d-flex align-items-center flex-column justify-content-center bg-transparent '
         style={{ minHeight: "100vh" }}>
         <Iframe
           width='800'
