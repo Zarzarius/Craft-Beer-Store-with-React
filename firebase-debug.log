@@ -1,0 +1,35 @@
+[debug] [2021-02-12T17:16:46.412Z] ----------------------------------------------------------------------
+[debug] [2021-02-12T17:16:46.414Z] Command:       /usr/bin/node /usr/bin/firebase hosting:channel:deploy preview_name
+[debug] [2021-02-12T17:16:46.414Z] CLI Version:   9.3.0
+[debug] [2021-02-12T17:16:46.414Z] Platform:      linux
+[debug] [2021-02-12T17:16:46.414Z] Node Version:  v15.8.0
+[debug] [2021-02-12T17:16:46.415Z] Time:          Fri Feb 12 2021 18:16:46 GMT+0100 (Central European Standard Time)
+[debug] [2021-02-12T17:16:46.415Z] ----------------------------------------------------------------------
+[debug] [2021-02-12T17:16:46.415Z] 
+[debug] [2021-02-12T17:16:46.419Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-02-12T17:16:46.419Z] > authorizing via signed-in user
+[debug] [2021-02-12T17:16:46.420Z] [iam] checking project login-craft-beer for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-02-12T17:16:46.422Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/login-craft-beer:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-02-12T17:16:47.189Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 12 Feb 2021 17:16:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=620","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-02-12T17:16:47.196Z] > refreshing access token with scopes: []
+[debug] [2021-02-12T17:16:47.196Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-02-12T17:16:47.355Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 12 Feb 2021 17:16:47 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-02-12T17:16:47.377Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/login-craft-beer [none]
+[debug] [2021-02-12T17:16:47.728Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/login-craft-beer 200
+[debug] [2021-02-12T17:16:47.729Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/login-craft-beer {"projectId":"login-craft-beer","projectNumber":"105158929316","displayName":"Login Craft Beer - Development","name":"projects/login-craft-beer","resources":{"hostingSite":"login-craft-beer","realtimeDatabaseInstance":"login-craft-beer-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'login-craft-beer'...
+[info] 
+[info] i  deploying hosting 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/login-craft-beer/overview
+[debug] [2021-02-12T17:16:47.895Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/lib/node_modules/firebase-tools/lib/deploy/index.js:85:36
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)
+    at async Command.actionFn (/usr/lib/node_modules/firebase-tools/lib/commands/hosting-channel-deploy.js:82:5)
+[error] 
+[error] Error: An unexpected error has occurred.

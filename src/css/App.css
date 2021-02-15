@@ -129,7 +129,7 @@
   text-align: center;
   font-family: "Shojumaru", cursive;
   color: #99c838;
-  font-size: 6rem;
+  font-size: 5rem;
   text-shadow: 8px 2px 16px #619900;
 }
 
@@ -165,4 +165,18 @@
   border: 3px solid black;
   border-radius: 50%;
   background-color: #4b4b4e34;
+}
+
+.basket-card {
+  border-radius: 5px;
+  margin: 3rem 0;
+  position: relative;
+  background-color: #eeedf4;
+}
+.basket-card h1 {
+  text-align: center;
+}
+
+.basket-card a {
+  padding: 0.8rem;
 }
