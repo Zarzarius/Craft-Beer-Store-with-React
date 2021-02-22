@@ -14,6 +14,7 @@ const Navigation = () => {
             <img className='Header-logo' src={BeerLogo} alt={BeerLogo} />
           </Link>
           <h2 className='Navbar-text'>CRAFTBEER DEALER</h2>
+          <Link to='/basket'>Basket</Link>
         </div>
       </Nav>
     </>
