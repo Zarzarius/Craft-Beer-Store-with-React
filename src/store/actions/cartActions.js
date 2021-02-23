@@ -1,23 +1,34 @@
+import {
+  DECREASE_QUANTITY,
+  INCREASE_QUANTITY,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+} from "./types";
+
 export const addToCart = (item) => {
   return {
-    type: "ADD_TO_CART",
+    type: ADD_TO_CART,
     payload: item,
   };
 };
 
 export const removeFromCart = (productId) => {
   return {
-    type: "REMOVE_FROM_CART",
+    type: REMOVE_FROM_CART,
     payload: productId,
   };
 };
 
-export const addQuantity = (productId, quantity) => {
+export const increaseQuantity = (productId) => {
   return {
-    type: "ADD_QUANTITY",
-    payload: {
-      id: productId,
-      quantity: quantity++,
-    },
+    type: INCREASE_QUANTITY,
+    payload: productId,
+  };
+};
+
+export const decreaseQuantity = (productId) => {
+  return {
+    type: DECREASE_QUANTITY,
+    payload: productId,
   };
 };

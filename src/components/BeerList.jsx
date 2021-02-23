@@ -18,9 +18,9 @@ const BeerList = () => {
       (beer) =>
         !beer.image_url.includes("keg") && !beer.image_url.includes("cask")
     )
-    .map((beer) => (
+    .map((beer, index) => (
       <Card
-        key={beer.id}
+        key={index}
         className='beer-card d-flex align-items-center'
         style={{
           height: "35rem",
@@ -61,9 +61,6 @@ const BeerList = () => {
         </Button>
       </Card>
     ));
-  console.log("====================================");
-  console.log(beerItems);
-  console.log("====================================");
 
   return (
     <>

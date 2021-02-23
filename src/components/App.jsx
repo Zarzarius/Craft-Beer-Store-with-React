@@ -9,7 +9,7 @@ import BeerDetail from "./BeerDeatail";
 import NotFound404 from "./NotFound404";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./Navigation";
-import Basket from "./Basket";
+import Cart from "./Cart";
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/videoinfo' component={VideoInfo} />
           <Route path='/beerlist' exact component={Beerlist} />
           <Route path='/beerlist/:id' component={BeerDetail} />
-          <Basket path='/basket' component={Basket} />
+          <Cart path='/cart' component={Cart} />
           <Route component={NotFound404} />
         </Switch>
         <Footer />
